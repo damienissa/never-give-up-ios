@@ -9,6 +9,10 @@
 import Foundation
 import CoreLocation
 
+public extension Notification.Name {
+    static let neverGiveUpHelperNotification: Self = .init(rawValue: "neverGiveUpHelperNotification")
+}
+
 class VDLocationTracking: NSObject {
     
     //Constant
@@ -74,7 +78,7 @@ extension VDLocationTracking:VDLocationManagerDelegate{
     func scheduledLocationManager(_ manager: VDLocationManager, didUpdateLocations locations: [CLLocation]) {
         let recentLocation = locations.last!
         logh("Location retrive successfully:\(recentLocation.debugDescription)")
-        NotificationCenter.default.post(name: .init(rawValue: "didUpdateLocations"), object: nil)
+        NotificationCenter.default.post(name: .neverGiveUpHelperNotification, object: nil)
     }
     
     func scheduledLocationManager(_ manager: VDLocationManager, didFailWithError error: Error) {
