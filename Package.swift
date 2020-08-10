@@ -4,11 +4,12 @@
 import PackageDescription
 
 let package = Package(
-    name: "never-give-up-ios",
+    name: "NeverGiveUp",
+    platforms: [.iOS(.v10)],
     products: [
         // Products define the executables and libraries produced by a package, and make them visible to other packages.
         .library(
-            name: "never-give-up-ios",
+            name: "NeverGiveUp",
             targets: ["never-give-up-ios"]),
     ],
     dependencies: [
@@ -21,8 +22,5 @@ let package = Package(
         .target(
             name: "never-give-up-ios",
             dependencies: []),
-        .testTarget(
-            name: "never-give-up-iosTests",
-            dependencies: ["never-give-up-ios"]),
     ]
 )
