@@ -22,6 +22,8 @@ public class NeverGiveUp: NSObject {
     @objc
     public static func enterForeground() {
         
+        firstStart()
+        
         if !wasStarted {
             return
         }
