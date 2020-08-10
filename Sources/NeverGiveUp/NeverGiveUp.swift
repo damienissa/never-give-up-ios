@@ -9,16 +9,24 @@ import Foundation
 
 @objc
 public class NeverGiveUp: NSObject {
+    
+    private static var wasStarted = false
         
     @objc
     public static func enterBackground() {
         
+        wasStarted = true
         VDLocationTracking.shared().startLocationTracking()
     }
     
     @objc
     public static func enterForeground() {
         
+        if !wasStarted {
+            return
+        }
+        
         VDLocationTracking.shared().stopLocationTracking()
+        wasStarted = false
     }
 }
