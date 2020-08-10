@@ -8,21 +8,15 @@
 import Foundation
 
 @objc
-public protocol NeverGiveUp {
+public class NeverGiveUp: NSObject {
         
     @objc
-    static func enterBackground()
-    @objc
-    static func enterForeground()
-}
-
-extension NeverGiveUp {
-    
     static func enterBackground() {
         
         VDLocationTracking.shared().startLocationTracking()
     }
     
+    @objc
     static func enterForeground() {
         
         VDLocationTracking.shared().stopLocationTracking()
