@@ -7,19 +7,16 @@
 
 import Foundation
 
-@objc
-public class NeverGiveUp: NSObject {
+public struct NeverGiveUp {
     
     private static var wasStarted = false
         
-    @objc
     public static func enterBackground() {
         
         wasStarted = true
         VDLocationTracking.shared().startLocationTracking()
     }
     
-    @objc
     public static func enterForeground() {
         
         firstStart()

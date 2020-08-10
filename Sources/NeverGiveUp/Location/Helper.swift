@@ -7,10 +7,10 @@
 
 import Foundation
 
-func logh(_ message: String, file: StaticString = #file, line: Int = #line) {
+func logh(_ message: String, file: String = #file, line: Int = #line) {
 
     #if DEBUG
-        print("File: %@, Line: %d, Message: %@", file, line, message)
+    print(String(format: "File: %@, Line: %d, Message: %@", file, line, message))
     #endif
 }
 
