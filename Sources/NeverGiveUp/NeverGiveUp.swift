@@ -11,13 +11,13 @@ import Foundation
 public class NeverGiveUp: NSObject {
         
     @objc
-    static func enterBackground() {
+    public static func enterBackground() {
         
         VDLocationTracking.shared().startLocationTracking()
     }
     
     @objc
-    static func enterForeground() {
+    public static func enterForeground() {
         
         VDLocationTracking.shared().stopLocationTracking()
     }

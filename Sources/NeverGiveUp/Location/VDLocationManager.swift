@@ -10,7 +10,7 @@ import Foundation
 import CoreLocation
 import UIKit
 
-public protocol VDLocationManagerDelegate {
+protocol VDLocationManagerDelegate {
     
     func scheduledLocationManager(_ manager: VDLocationManager, didFailWithError error: Error)
     func scheduledLocationManager(_ manager: VDLocationManager, didUpdateLocations locations: [CLLocation])
@@ -18,7 +18,7 @@ public protocol VDLocationManagerDelegate {
 }
 
 
-public class VDLocationManager: NSObject, CLLocationManagerDelegate {
+class VDLocationManager: NSObject, CLLocationManagerDelegate {
     
     private let MaxBGTime: TimeInterval = 170
     private let MinBGTime: TimeInterval = 2
